@@ -1,47 +1,31 @@
-import Saludo from "./components/Saludo/Saludo";
-import SaludoPer from "./components/SaludoPer/SaludoPer"
-import SaludoDes from "./components/SaludoDes/SaludoDes";
-import Tarjeta from "./components/Tarjeta/Tarjeta";
-// Importa la funcion Mastercard de la funcion Tarjeta.
-import { Mastercard } from "./components/Tarjeta/Tarjeta";
-import ListaDeElems from "./components/ListaDeElems/ListaDeElems";
-import BotonAlerta from "./components/BotonAlerta/BotonAlerta";
+// import Component, {ComponentLogin} from "./components/Component/Component"
+// import Notification from "./components/Notification/Notification"
+import Dashboard from "./components/Dashboard/Dashboard"
+import ComponentOther from "./components/ComponentOther/ComponentOther"
+import ProductItem, {ProductItemDirect} from "./components/ProductItem/ProductItem"
 
 function App() {
-  let alias = "barximan";
-  let user = {
-    nombre: "echoziman",
-    correo: "e@e.e"
+
+  let product = {
+    name:"Cambur",
+    price:2,
+    isOnSale:true,
+    stock:0
   }
 
   return (
     <>
-      {/* Funcion sencilla sin argumentos. */}
-      <Saludo />
+      {/* <Notification hasMessages={true} />
+      <br/>
+      <Component userName="Randy" />
+      <ComponentLogin isLoggedIn={true} /> */}
 
-      {/* Aqui el valor de alias se esta declarando en
-      un let mas arriba */}
-      <SaludoPer nombre={alias}/>
+      <Dashboard isAdmin={!true}/>
+      <ComponentOther isAdmin={true} />
 
-      {/* Aqui se estan insertando los atributos
-      en el propio bloque */}
-      <SaludoDes nombre={"foo"} correo={"f@f.f"}/>
-
-      {/* Con ...user, se agregan todos los valores
-      de esa lista (ver declaracion arriba) */}
-      <SaludoDes {...user}/>
-
-      {/* Cuando no tiene argumentos, se coloca el
-      valor default establecido en la funcion */}
-      <SaludoDes /> 
-
-      <Tarjeta titulo={"⚡ Tarjeta"}>
-        <Mastercard />
-      </Tarjeta>
-
-      <ListaDeElems elementos={["f", "b", "v", "e", "d"]}/>
-
-      <BotonAlerta msj={"Buenas noches."} />
+      <ProductItem product={product}/>
+      <ProductItemDirect name={"Mango"} price={350} isOnSale={true} stock={50}/>
+      <ProductItemDirect {...product} />
     </>
   )
 }
