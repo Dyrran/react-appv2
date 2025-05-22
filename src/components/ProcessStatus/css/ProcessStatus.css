@@ -1,0 +1,16 @@
+.textModal {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.statusModal {
+    background-color: rgb(236, 236, 193);
+    padding: 32px 0px 8px 0px;
+    margin: 0px 5%;
+}

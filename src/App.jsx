@@ -3,6 +3,7 @@
 import Dashboard from "./components/Dashboard/Dashboard"
 import ComponentOther from "./components/ComponentOther/ComponentOther"
 import ProductItem, {ProductItemDirect} from "./components/ProductItem/ProductItem"
+import ProcessStatus from "./components/ProcessStatus/ProcessStatus"
 
 function App() {
 
@@ -23,9 +24,15 @@ function App() {
       <Dashboard isAdmin={!true}/>
       <ComponentOther isAdmin={true} />
 
+      <br/>
+      {/* loading, error, success, default */}
+      <ProcessStatus status={"loading"}/>
+      <br/>
+
       <ProductItem product={product}/>
       <ProductItemDirect name={"Mango"} price={350} isOnSale={true} stock={50}/>
       <ProductItemDirect {...product} />
+      
     </>
   )
 }
